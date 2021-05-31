@@ -31,6 +31,7 @@ function askQuestion() {
   //  let quiz = [questions[i]];
   candidateAnswer[i]=input.question(questions[i]);
  }
+
 //  console.log(quiz);
 // console.log(candidateAnswer);
 
@@ -47,16 +48,26 @@ function gradeQuiz(candidateAnswers) {
   }*/
   //for (let i=0; i<5; i++) {
     //let quizAns = [correctAnswer [i]];
-  
-  while (i<5) {
-    
-  }
-  
-  if (candidateAnswer === correctAnswer) {
+  let i=0;
+  while (candidateAnswer[i] === correctAnswer[i]) {
+    // console.log ("Correct!"); i++;
+    if (candidateAnswer[i] === correctAnswer[i]) {
+    console.log("Correct!");
+  } else {
+    console.log ("Sorry, that was incorrect."); i++
+   }
+
+  if (candidateAnswer[i] === correctAnswer[i]) {
     console.log("Correct!");
   } else {
     console.log ("Sorry, that was incorrect.");
   }
+  
+  /*if (candidateAnswer === correctAnswer) {
+    console.log("Correct!");
+  } else {
+    console.log ("Sorry, that was incorrect.");
+  }*/
 
 
 
