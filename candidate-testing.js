@@ -6,69 +6,41 @@ const input = require('readline-sync');
 let candidateName = "";
 
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-// let correctAnswer = "Sally Ride";
-let correctAnswer = ["Sally Ride", "True", "40", "Trajectory", "3"];
+let question = "Who was the first American woman in space? ";
+let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-// let questions = "Who was the first American woman in space? ";
 let questions = ["Who was the first American woman in space? ","True or false: 5 kilometers = 5000 meters? ", "(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? "];
-let correctAnswers;
-let candidateAnswers;
+let correctAnswers = ["Sally Ride", "True", 40, "Trajectory", 3];
+let candidateAnswers = [];
 
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
   candidateName=input.question("Enter your name: ");
-// console.log(candidateName);
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
-// console.log(questions);
-  // candidateAnswer=input.question(questions);
- for (let i=0; i<5; i++) {
-  //  let quiz = [questions[i]];
-  candidateAnswer[i]=input.question(questions[i]);
+
+ for (let i=0; i< questions.length; i++) {
+  candidateAnswers=input.question(questions[i]);
+  //  if (candidateAnswers === correctAnswers[i]) {
+  //   console.log("Correct!");
+  // } else {
+  //   console.log ("Sorry, that was incorrect.");
+  // }
+  console.log("Your Answer: " + candidateAnswers[i]);
+  console.log("Correct Answer: " + correctAnswers[i]);
  }
 
-//  console.log(quiz);
-// console.log(candidateAnswer);
-
 }
+
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
  
- /*if (candidateAnswer === correctAnswer) {
-    console.log("Correct!");
-  } else {
-    console.log ("Sorry, that was incorrect.");
-  }*/
-  //for (let i=0; i<5; i++) {
-    //let quizAns = [correctAnswer [i]];
-  let i=0;
-  while (candidateAnswer[i] === correctAnswer[i]) {
-    // console.log ("Correct!"); i++;
-    if (candidateAnswer[i] === correctAnswer[i]) {
-    console.log("Correct!");
-  } else {
-    console.log ("Sorry, that was incorrect."); i++
-   }
-
-  if (candidateAnswer[i] === correctAnswer[i]) {
-    console.log("Correct!");
-  } else {
-    console.log ("Sorry, that was incorrect.");
-  }
-  
-  /*if (candidateAnswer === correctAnswer) {
-    console.log("Correct!");
-  } else {
-    console.log ("Sorry, that was incorrect.");
-  }*/
-
 
 
   let grade;
