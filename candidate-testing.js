@@ -19,6 +19,7 @@ let questions = [
 
 let correctAnswers = ["true", "40", "Trajectory", "Sally Ride", "3"];
 let candidateAnswers = [];
+let numCorrect = 0;
 
 
 function askForName() {
@@ -49,27 +50,35 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let score=0;
-  let grade;
-  for (let i=0; i<candidateAnswers.length; i++){
-    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      score+=1;
-   }
-  }
-  grade=score/5 * 100;
-  
-  
+  // let score=0;
+  let grade = (numCorrect / questions.length) * 100
 
-  console.log(`>>> Overall Grade: ${grade}%  (${score} of 5 responses corret) <<<`)
-
-  if (grade<80) {
-    console.log(">>> Status: FAILED <<<");
+  // for (let i=0; i<candidateAnswers.length; i++){
+  //   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+  //     score+=1;
+  //  }
+  // }
+  // grade=score/5 * 100;
+  
+  // let grade = (numCorrect / questions.length) * 100;
+  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${questions.length} correct) <<<`);
+  if (grade >= 80) {
+    console.log(`>>> Status: PASSED <<<`);
   } else {
-    console.log(">>> Status: PASS <<<")
+    console.log(`>>> Status: FAILED <<<`);
+
+
   }
+  // console.log(`>>> Overall Grade: ${grade}%  (${score} of 5 responses corret) <<<`)
+
+  // if (grade >= 80) {
+  //   console.log(">>> Status: PASSED <<<");
+  // } else {
+  //   console.log(">>> Status: FAILED <<<")
+  // }
 
 
-  return grade;
+  // return grade;
 }
 //console.log(gradeQuiz);
 
