@@ -27,7 +27,14 @@ function askQuestion() {
   let answer=input.question(questions[i]);
   candidateAnswers.push(answer);
  
-  console.log("Correct Answer: " + correctAnswers[i] + "\n");
+ if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      console.log("Correct!");
+   } else {
+     console.log("Sorry, wrong answer."+ "\n");
+   }
+
+
+  // console.log("Correct Answer: " + correctAnswers[i] + "\n");
  }
   
 }
