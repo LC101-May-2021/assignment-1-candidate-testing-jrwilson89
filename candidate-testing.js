@@ -9,8 +9,8 @@ let candidateName = "";
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ["1) Who was the first American woman in space?\nYour Answer: ","2) True or false: 5 kilometers = 5000 meters?\nYour Answer: ", "3) (5 + 3)/2 * 10 = ?\nYour Answer: ", "4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?\nYour Answer: ", "5) What is the minimum crew size for the ISS?\nYour Answer: "];
-let correctAnswers = ["Sally Ride", "True", "40", "Trajectory", "3"];
+let questions = ["Who was the first American woman in space?","True or false: 5 kilometers = 5000 meters?", "(5 + 3)/2 * 10 = ?", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
 
@@ -24,17 +24,17 @@ function askQuestion() {
 
 
  for (let i=0; i< questions.length; i++) {
-  let answer=input.question(questions[i]);
+  let answer=input.question(questions[i] + "\nYour answer: ");
   candidateAnswers.push(answer);
  
  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      console.log("Correct!");
-   } else {
-     console.log("Sorry, wrong answer."+ "\n");
+  //     console.log("Correct!");
+  //  } else {
+  //    console.log("Sorry, wrong answer.");
    }
 
 
-  // console.log("Correct Answer: " + correctAnswers[i] + "\n");
+  console.log("Correct Answer: " + correctAnswers[i] + "\n");
  }
   
 }
