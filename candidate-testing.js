@@ -35,14 +35,14 @@ function askQuestion() {
   let answer=input.question(questions[i] + "\nYour answer: ");
   candidateAnswers.push(answer);
  
- if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-  //     console.log("Correct!");
-  //  } else {
-  //    console.log("Sorry, wrong answer.");
-   }
+//  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+//   //     console.log("Correct!");
+//   //  } else {
+//   //    console.log("Sorry, wrong answer.");
+//    }
 
 
-  console.log("Correct Answer: " + correctAnswers[i] + "\n");
+  // console.log("Correct Answer: " + correctAnswers[i] + "\n");
  }
   
 }
