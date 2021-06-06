@@ -9,9 +9,17 @@ let candidateName = "";
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ['Who was the first American woman in space? ','True or false: 5 kilometers = 5000 meters? ','(5 + 3)/2 * 10 = ? ','Given the array [8, Orbit, Trajectory, 45], what entry is at index 2? ','What is the minimum crew size for the ISS? '];
-let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
+let questions = [
+"True or false: 5 kilometer == 5000 meters?",
+"(5 + 3)/2 * 10 = ?",
+'Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2?',
+"Who was the first American woman in space?",
+"What is the minimum crew size for the ISS?"
+];
+
+let correctAnswers = ["true", "40", "Trajectory", "Sally Ride", "3"];
 let candidateAnswers = [];
+let numCorrect = 0;
 
 
 function askForName() {
@@ -27,14 +35,14 @@ function askQuestion() {
   let answer=input.question(questions[i] + "\nYour answer: ");
   candidateAnswers.push(answer);
  
- if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-  //     console.log("Correct!");
-  //  } else {
-  //    console.log("Sorry, wrong answer.");
-   }
+//  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+//   //     console.log("Correct!");
+//   //  } else {
+//   //    console.log("Sorry, wrong answer.");
+//    }
 
 
-  console.log("Correct Answer: " + correctAnswers[i] + "\n");
+  // console.log("Correct Answer: " + correctAnswers[i] + "\n");
  }
   
 }
@@ -42,27 +50,49 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let score=0;
-  let grade;
-  for (let i=0; i<candidateAnswers.length; i++){
-    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      score+=1;
-   }
+  // let score=0;
+
+
+  // for (let i=0; i<candidateAnswers.length; i++){
+  //   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+  //     score+=1;
+  //  }
+  // }
+  // grade=score/5 * 100;
+
+
+    for (let i=0; i<questions.length; i++) {
+      if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+        numCorrect ++;
+      }
+      console.log(`${i+1}) ${questions[i]}`);
+      console.log(`Your Answer: ${candidateAnswers[i].toLowerCase()}`);
+      console.log(`Correct Answer: ${correctAnswers[i].toLowerCase()}`);
+      console.log('\n');
   }
-  grade=score/5 * 100;
-  
-  
 
-  console.log(`>>> Overall Grade: ${grade}%  (${score} of 5 responses corret) <<<`)
-
-  if (grade<80) {
-    console.log(">>> Status: FAILED <<<");
+  
+  let grade = (numCorrect / questions.length) * 100;
+  
+  // let grade = (numCorrect / questions.length) * 100;
+  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${questions.length} correct) <<<`);
+  if (grade >= 80) {
+    console.log(`>>> Status: PASSED <<<`);
   } else {
-    console.log(">>> Status: PASS <<<")
+    console.log(`>>> Status: FAILED <<<`);
+
+
   }
+  // console.log(`>>> Overall Grade: ${grade}%  (${score} of 5 responses corret) <<<`)
+
+  // if (grade >= 80) {
+  //   console.log(">>> Status: PASSED <<<");
+  // } else {
+  //   console.log(">>> Status: FAILED <<<")
+  // }
 
 
-  return grade;
+  // return grade;
 }
 //console.log(gradeQuiz);
 
